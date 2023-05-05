@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bxpa7qmi807fd"
+path="res://.godot/imported/VANTE - Take It All _ ♫ Copyright Free Music.mp3-bf993755849e155c0bc6d18e271b7a48.mp3str"
+
+[deps]
+
+source_file="res://music/VANTE - Take It All _ ♫ Copyright Free Music.mp3"
+dest_files=["res://.godot/imported/VANTE - Take It All _ ♫ Copyright Free Music.mp3-bf993755849e155c0bc6d18e271b7a48.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

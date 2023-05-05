@@ -1,0 +1,18 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://cu050lo6d6b8k"]
+
+[ext_resource type="Texture2D" uid="uid://bhke8an7gblcy" path="res://asset/environment/teleporter-spritesheet.png" id="1_6sp6g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytwch"]
+atlas = ExtResource("1_6sp6g")
+region = Rect2(5312, 0, 64, 64)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytwch")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

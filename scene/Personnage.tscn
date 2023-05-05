@@ -1,0 +1,98 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5pkplfi0qtvk"]
+
+[ext_resource type="Script" path="res://script/player.gd" id="1_88d2m"]
+[ext_resource type="SpriteFrames" uid="uid://cwn0ftedshpqi" path="res://animation/character_default.tres" id="2_s5ctf"]
+[ext_resource type="AudioStream" uid="uid://k0oicagyd7r5" path="res://music/dead2.wav" id="3_ni74f"]
+[ext_resource type="AudioStream" uid="uid://dyocdkc0764kt" path="res://music/electricity.wav" id="4_tppmu"]
+[ext_resource type="AudioStream" uid="uid://dpleitrhcque5" path="res://music/flame2.wav" id="5_c2gtg"]
+[ext_resource type="AudioStream" uid="uid://bwnjyssnc4loc" path="res://music/water.wav" id="6_ly6ni"]
+[ext_resource type="Texture2D" uid="uid://dysl0qr6erm07" path="res://asset/effects/electricity_spritesheet.png" id="7_k51ps"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m2fj4"]
+radius = 25.0799
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mr6vq"]
+atlas = ExtResource("7_k51ps")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m42x"]
+atlas = ExtResource("7_k51ps")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pf4e4"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m42x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m42x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m42x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m42x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m42x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mr6vq")
+}],
+"loop": true,
+"name": &"elec",
+"speed": 10.0
+}]
+
+[node name="Personnage" type="Node2D"]
+z_index = 5
+script = ExtResource("1_88d2m")
+direction = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_s5ctf")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_m2fj4")
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ni74f")
+volume_db = 9.753
+
+[node name="Electricity" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_tppmu")
+volume_db = -8.28
+
+[node name="Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_c2gtg")
+volume_db = -1.482
+
+[node name="Water" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ly6ni")
+volume_db = -1.482
+
+[node name="ElecAnim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pf4e4")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://b8jvv3dxtguyl"]
+
+[ext_resource type="Texture2D" uid="uid://csys8vcru1ymj" path="res://asset/UI/card_bg.png" id="1_xu0jl"]
+
+[node name="HUD" type="Node2D"]
+z_index = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xu0jl")

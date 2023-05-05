@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2cg751lkvb7d"]
+
+[ext_resource type="SpriteFrames" uid="uid://cwn0ftedshpqi" path="res://animation/character_default.tres" id="2_jddfu"]
+[ext_resource type="SpriteFrames" path="res://animation/electrical_wall.tres" id="4_q6bua"]
+[ext_resource type="Texture2D" uid="uid://clkhxim7y6u1x" path="res://asset/wall/wall_5.png" id="5_yvshs"]
+[ext_resource type="Texture2D" uid="uid://dh608p0dmcqrx" path="res://asset/wall/wall_6.png" id="6_45fvt"]
+[ext_resource type="Texture2D" uid="uid://c1wlis18gmg1w" path="res://asset/wall/wall_1.png" id="7_rlm2w"]
+[ext_resource type="Texture2D" uid="uid://bdkynci1cgxq4" path="res://asset/ground/ground_1.png" id="8_ogmh5"]
+[ext_resource type="Texture2D" uid="uid://b15ux17hdqd8i" path="res://asset/wall/wall_0.png" id="9_ioj6l"]
+[ext_resource type="Texture2D" uid="uid://t3k1yixy64hp" path="res://asset/ground/ground_0.png" id="10_qlf23"]
+[ext_resource type="Texture2D" uid="uid://bhhqb0dhb6i8o" path="res://asset/wall/wall_8.png" id="11_g4eww"]
+[ext_resource type="Texture2D" uid="uid://cfiqo8jdhtnyi" path="res://asset/wall/wall_10.png" id="12_ljwql"]
+
+[node name="animations" type="Node2D"]
+
+[node name="DEFAULT" type="AnimatedSprite2D" parent="."]
+position = Vector2(98, 68)
+sprite_frames = ExtResource("2_jddfu")
+animation = &"blue"
+
+[node name="ELECTRICAL_WALL" type="AnimatedSprite2D" parent="."]
+position = Vector2(-301, 145)
+sprite_frames = ExtResource("4_q6bua")
+frame_progress = 0.576053
+
+[node name="Wall5" type="Sprite2D" parent="."]
+position = Vector2(-428, 144)
+texture = ExtResource("5_yvshs")
+
+[node name="Wall6" type="Sprite2D" parent="."]
+position = Vector2(-428, 208)
+texture = ExtResource("6_45fvt")
+
+[node name="Wall1" type="Sprite2D" parent="."]
+position = Vector2(-492, 144)
+texture = ExtResource("7_rlm2w")
+
+[node name="Ground1" type="Sprite2D" parent="."]
+position = Vector2(-492, 208)
+texture = ExtResource("8_ogmh5")
+
+[node name="Ground2" type="Sprite2D" parent="."]
+position = Vector2(-556, 207)
+texture = ExtResource("8_ogmh5")
+
+[node name="Wall0" type="Sprite2D" parent="."]
+position = Vector2(-620, 145)
+texture = ExtResource("9_ioj6l")
+
+[node name="Wall7" type="Sprite2D" parent="."]
+position = Vector2(-428, 272)
+texture = ExtResource("6_45fvt")
+
+[node name="Ground3" type="Sprite2D" parent="."]
+position = Vector2(-492, 272)
+texture = ExtResource("8_ogmh5")
+
+[node name="Wall8" type="Sprite2D" parent="."]
+position = Vector2(-556, 271)
+texture = ExtResource("5_yvshs")
+
+[node name="Wall3" type="Sprite2D" parent="."]
+position = Vector2(-556, 144)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall2" type="Sprite2D" parent="."]
+position = Vector2(-620, 271)
+texture = ExtResource("9_ioj6l")
+
+[node name="Ground0" type="Sprite2D" parent="."]
+position = Vector2(-620, 207)
+texture = ExtResource("10_qlf23")
+
+[node name="Wall4" type="Sprite2D" parent="."]
+position = Vector2(-364, 144)
+texture = ExtResource("7_rlm2w")
+
+[node name="Ground4" type="Sprite2D" parent="."]
+position = Vector2(-364, 208)
+texture = ExtResource("8_ogmh5")
+
+[node name="Ground5" type="Sprite2D" parent="."]
+position = Vector2(-364, 272)
+texture = ExtResource("8_ogmh5")
+
+[node name="Ground6" type="Sprite2D" parent="."]
+position = Vector2(-364, 335)
+texture = ExtResource("8_ogmh5")
+
+[node name="Ground7" type="Sprite2D" parent="."]
+position = Vector2(-428, 335)
+texture = ExtResource("8_ogmh5")
+
+[node name="Ground8" type="Sprite2D" parent="."]
+position = Vector2(-492, 335)
+texture = ExtResource("8_ogmh5")
+
+[node name="Wall10" type="Sprite2D" parent="."]
+position = Vector2(-493, 399)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall12" type="Sprite2D" parent="."]
+position = Vector2(-429, 399)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall13" type="Sprite2D" parent="."]
+position = Vector2(-365, 399)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall14" type="Sprite2D" parent="."]
+position = Vector2(-301, 399)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall15" type="Sprite2D" parent="."]
+position = Vector2(-301, 335)
+texture = ExtResource("6_45fvt")
+
+[node name="Wall9" type="Sprite2D" parent="."]
+position = Vector2(-557, 335)
+texture = ExtResource("11_g4eww")
+
+[node name="Wall11" type="Sprite2D" parent="."]
+position = Vector2(-557, 399)
+texture = ExtResource("12_ljwql")
+
+[node name="Ground9" type="Sprite2D" parent="."]
+position = Vector2(-301, 208)
+texture = ExtResource("8_ogmh5")
+
+[node name="Wall16" type="Sprite2D" parent="."]
+position = Vector2(-301, 272)
+texture = ExtResource("6_45fvt")
+
+[node name="Wall17" type="Sprite2D" parent="."]
+position = Vector2(-237, 272)
+texture = ExtResource("7_rlm2w")
+
+[node name="Wall18" type="Sprite2D" parent="."]
+position = Vector2(-237, 144)
+texture = ExtResource("7_rlm2w")
+
+[node name="Ground10" type="Sprite2D" parent="."]
+position = Vector2(-237, 208)
+texture = ExtResource("8_ogmh5")

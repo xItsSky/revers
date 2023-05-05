@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://ruxponn8armq"]
+
+[ext_resource type="SpriteFrames" uid="uid://cwx8wqo154qbu" path="res://animation/TeleporteurAnimation.tres" id="1_48xjs"]
+
+[node name="TeleporteurAnimation" type="Node2D"]
+z_index = 10
+scale = Vector2(1.5, 1.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_48xjs")
+animation = &"tp"
+autoplay = "idle"

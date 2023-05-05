@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://x4mon4ynuphd"
+path="res://.godot/imported/VANTE - Astronomical _ ♫ Copyright Free Music.mp3-29fd62df3b734183faab74b322be1cd1.mp3str"
+
+[deps]
+
+source_file="res://music/VANTE - Astronomical _ ♫ Copyright Free Music.mp3"
+dest_files=["res://.godot/imported/VANTE - Astronomical _ ♫ Copyright Free Music.mp3-29fd62df3b734183faab74b322be1cd1.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

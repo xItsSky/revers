@@ -1,0 +1,342 @@
+[gd_scene load_steps=20 format=3 uid="uid://yut65qiywyu2"]
+
+[ext_resource type="Script" path="res://script/level_engine.gd" id="1_2vxui"]
+[ext_resource type="PackedScene" uid="uid://b5pkplfi0qtvk" path="res://scene/Personnage.tscn" id="2_s5ysn"]
+[ext_resource type="Texture2D" uid="uid://rac1k4151ltt" path="res://asset/environment/environment-spritesheet.png" id="3_dass1"]
+[ext_resource type="PackedScene" uid="uid://b8jvv3dxtguyl" path="res://scene/HUD.tscn" id="3_j7go6"]
+[ext_resource type="Texture2D" uid="uid://csu33ei1cgglc" path="res://asset/environment/flame_spritesheet.png" id="4_jinlr"]
+[ext_resource type="Script" path="res://script/monde.gd" id="4_xrmx6"]
+[ext_resource type="PackedScene" uid="uid://j6gj3cl6o7pr" path="res://scene/Carte_deplacement.tscn" id="5_iodqg"]
+[ext_resource type="Texture2D" uid="uid://ckl2lntc8g5ex" path="res://asset/environment/water-spritesheet.png" id="6_tf0m4"]
+[ext_resource type="PackedScene" uid="uid://b6nwrp7kx7obd" path="res://scene/spawner_niveau.tscn" id="7_5vfy6"]
+[ext_resource type="PackedScene" uid="uid://bfldc0rd00mj3" path="res://scene/Teleporteur.tscn" id="8_bsiwe"]
+[ext_resource type="AudioStream" uid="uid://bxpa7qmi807fd" path="res://music/VANTE - Take It All _ ♫ Copyright Free Music.mp3" id="10_7wure"]
+[ext_resource type="AudioStream" uid="uid://1171t242vj0g" path="res://music/robotmove.wav" id="11_p2mtw"]
+[ext_resource type="Script" path="res://script/niveau_fin_monde.gd" id="11_ubmap"]
+[ext_resource type="PackedScene" uid="uid://cnqq8377tpaww" path="res://scene/BoosterOpening.tscn" id="12_n8rlu"]
+[ext_resource type="Texture2D" uid="uid://mhqgf3bnmp38" path="res://asset/ground/game_background.jpg" id="15_jo8fb"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dtg67"]
+resource_name = "Environement"
+texture = ExtResource("3_dass1")
+texture_region_size = Vector2i(64, 64)
+0:0/next_alternative_id = 3
+0:0/0 = 0
+0:0/0/terrain_set = 0
+0:0/0/custom_data_1 = true
+1:0/next_alternative_id = 17
+1:0/0 = 0
+1:0/0/terrain_set = 0
+1:0/0/terrain = 0
+1:0/0/terrains_peering_bit/right_side = 0
+1:0/0/terrains_peering_bit/bottom_side = 1
+1:0/0/terrains_peering_bit/left_side = 0
+1:0/0/terrains_peering_bit/top_side = 1
+1:0/0/custom_data_1 = true
+1:0/11 = 11
+1:0/11/terrain_set = 0
+1:0/11/terrain = 0
+1:0/11/terrains_peering_bit/right_side = 1
+1:0/11/terrains_peering_bit/bottom_side = 1
+1:0/11/terrains_peering_bit/left_side = 0
+1:0/11/custom_data_1 = true
+1:0/12 = 12
+1:0/12/terrain_set = 0
+1:0/12/terrain = 0
+1:0/12/terrains_peering_bit/right_side = 0
+1:0/12/terrains_peering_bit/bottom_side = 1
+1:0/12/terrains_peering_bit/left_side = 1
+1:0/12/custom_data_1 = true
+1:0/13 = 13
+1:0/13/terrain_set = 0
+1:0/13/terrain = 0
+1:0/13/terrains_peering_bit/right_side = 1
+1:0/13/terrains_peering_bit/bottom_side = 1
+1:0/13/terrains_peering_bit/left_side = 0
+1:0/13/terrains_peering_bit/top_side = 0
+1:0/13/custom_data_1 = true
+1:0/14 = 14
+1:0/14/terrain_set = 0
+1:0/14/terrain = 0
+1:0/14/terrains_peering_bit/right_side = 0
+1:0/14/terrains_peering_bit/bottom_side = 1
+1:0/14/terrains_peering_bit/left_side = 1
+1:0/14/terrains_peering_bit/top_side = 0
+1:0/14/custom_data_1 = true
+1:0/15 = 15
+1:0/15/terrain_set = 0
+1:0/15/terrain = 0
+1:0/15/terrains_peering_bit/right_side = 0
+1:0/15/terrains_peering_bit/bottom_side = 0
+1:0/15/terrains_peering_bit/left_side = 0
+1:0/15/terrains_peering_bit/top_side = 1
+1:0/15/custom_data_1 = true
+1:0/16 = 16
+1:0/16/terrain_set = 0
+1:0/16/terrain = 0
+1:0/16/terrains_peering_bit/right_side = 0
+1:0/16/terrains_peering_bit/bottom_side = 1
+1:0/16/terrains_peering_bit/left_side = 0
+1:0/16/terrains_peering_bit/top_side = 0
+1:0/16/custom_data_1 = true
+2:0/animation_speed = 5.0
+2:0/animation_frame_0/duration = 1.0
+2:0/animation_frame_1/duration = 1.0
+2:0/animation_frame_2/duration = 1.0
+2:0/0 = 0
+2:0/0/modulate = Color(1, 1, 1, 0.462745)
+2:0/0/custom_data_0 = true
+5:0/next_alternative_id = 4
+5:0/0 = 0
+5:0/0/terrain_set = 0
+5:0/0/terrain = 0
+5:0/0/terrains_peering_bit/right_side = 1
+5:0/0/terrains_peering_bit/bottom_side = 0
+5:0/0/terrains_peering_bit/left_side = 0
+5:0/0/terrains_peering_bit/top_side = 1
+5:0/0/custom_data_1 = true
+8:0/next_alternative_id = 4
+8:0/0 = 0
+8:0/0/terrain_set = 0
+8:0/0/terrain = 0
+8:0/0/terrains_peering_bit/right_side = 1
+8:0/0/terrains_peering_bit/bottom_side = 0
+8:0/0/terrains_peering_bit/top_side = 0
+8:0/0/custom_data_1 = true
+8:0/3 = 3
+8:0/3/terrain_set = 0
+8:0/3/terrain = 0
+8:0/3/terrains_peering_bit/right_side = 0
+8:0/3/terrains_peering_bit/bottom_side = 0
+8:0/3/custom_data_1 = true
+9:0/next_alternative_id = 2
+9:0/0 = 0
+9:0/0/terrain_set = 0
+9:0/0/terrain = 0
+9:0/0/terrains_peering_bit/bottom_side = 0
+9:0/0/terrains_peering_bit/left_side = 1
+9:0/0/terrains_peering_bit/top_side = 0
+9:0/0/custom_data_1 = true
+9:0/1 = 1
+9:0/1/terrain_set = 0
+9:0/1/terrain = 0
+9:0/1/terrains_peering_bit/bottom_side = 0
+9:0/1/terrains_peering_bit/left_side = 0
+9:0/1/custom_data_1 = true
+10:0/next_alternative_id = 3
+10:0/0 = 0
+10:0/0/terrain_set = 0
+10:0/0/terrain = 0
+10:0/0/terrains_peering_bit/right_side = 0
+10:0/0/terrains_peering_bit/top_side = 0
+10:0/0/custom_data_1 = true
+11:0/next_alternative_id = 2
+11:0/0 = 0
+11:0/0/terrain_set = 0
+11:0/0/terrain = 0
+11:0/0/terrains_peering_bit/left_side = 0
+11:0/0/terrains_peering_bit/top_side = 0
+11:0/0/custom_data_1 = true
+12:0/0 = 0
+12:0/0/terrain_set = 0
+12:0/0/terrain = 0
+12:0/0/terrains_peering_bit/right_side = 0
+12:0/0/terrains_peering_bit/bottom_side = 0
+12:0/0/terrains_peering_bit/left_side = 1
+12:0/0/terrains_peering_bit/top_side = 1
+12:0/0/custom_data_1 = true
+15:0/next_alternative_id = 2
+15:0/0 = 0
+15:0/0/terrain_set = 0
+15:0/0/terrain = 1
+15:0/0/terrains_peering_bit/right_side = 1
+15:0/0/terrains_peering_bit/bottom_side = 1
+15:0/0/terrains_peering_bit/left_side = 1
+15:0/0/terrains_peering_bit/top_side = 1
+13:0/0 = 0
+13:0/0/terrain_set = 0
+13:0/0/terrain = 0
+13:0/0/terrains_peering_bit/right_side = 0
+13:0/0/terrains_peering_bit/bottom_side = 0
+13:0/0/terrains_peering_bit/left_side = 0
+13:0/0/terrains_peering_bit/top_side = 0
+13:0/0/custom_data_1 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3x0gc"]
+texture = ExtResource("6_tf0m4")
+texture_region_size = Vector2i(64, 64)
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/custom_data_3 = true
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x6kwb"]
+texture = ExtResource("4_jinlr")
+texture_region_size = Vector2i(64, 64)
+0:0/animation_speed = 5.0
+0:0/animation_frame_0/duration = 1.0
+0:0/animation_frame_1/duration = 1.0
+0:0/0 = 0
+0:0/0/custom_data_2 = true
+
+[sub_resource type="TileSet" id="TileSet_cjrmd"]
+tile_size = Vector2i(64, 64)
+terrain_set_0/mode = 2
+terrain_set_0/terrain_0/name = "Mur"
+terrain_set_0/terrain_0/color = Color(0, 0, 0, 1)
+terrain_set_0/terrain_1/name = "Sol"
+terrain_set_0/terrain_1/color = Color(0.658824, 0.345098, 0.254902, 1)
+custom_data_layer_0/name = "DeathCollision"
+custom_data_layer_0/type = 1
+custom_data_layer_1/name = "Mur"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "Fire"
+custom_data_layer_2/type = 1
+custom_data_layer_3/name = "Water"
+custom_data_layer_3/type = 1
+sources/0 = SubResource("TileSetAtlasSource_dtg67")
+sources/4 = SubResource("TileSetAtlasSource_x6kwb")
+sources/1 = SubResource("TileSetAtlasSource_3x0gc")
+
+[node name="monde1" type="Node2D" node_paths=PackedStringArray("carte_deplacement", "carte_elements")]
+script = ExtResource("1_2vxui")
+carte_deplacement = NodePath("CanvasLayer/Carte_deplacement")
+carte_elements = NodePath("")
+metadata/_edit_vertical_guides_ = [960.0, 829.082]
+metadata/_edit_horizontal_guides_ = [997.287]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Carte_deplacement" parent="CanvasLayer" instance=ExtResource("5_iodqg")]
+position = Vector2(829.054, 997.324)
+verso = false
+
+[node name="HUD" parent="CanvasLayer" instance=ExtResource("3_j7go6")]
+position = Vector2(960, 984)
+
+[node name="Personnage" parent="." instance=ExtResource("2_s5ysn")]
+position = Vector2(96, 96)
+frame_delay = 0.3
+
+[node name="Labyrinthe" type="TileMap" parent="." node_paths=PackedStringArray("niveau_1", "player_1", "engine")]
+tile_set = SubResource("TileSet_cjrmd")
+format = 2
+layer_0/name = "Ground objects"
+layer_0/tile_data = PackedInt32Array(65537, 983040, 0, 65538, 983040, 0, 65539, 983040, 0, 65540, 983040, 0, 131074, 65536, 983040, 131073, 65536, 983040, 1, 65536, 1048576, 2, 65536, 1048576, 3, 65536, 1048576, 4, 65536, 1048576, 5, 65536, 1048576, 6, 65536, 1048576, 131072, 655360, 0, 0, 655360, 0, 327686, 655360, 0, 65542, 983040, 0, 131078, 327680, 0, 196614, 524288, 0, 262150, 524288, 0, 131075, 65536, 983040, 131076, 65536, 983040, 65536, 524288, 0, 65541, 983040, 0, 65543, 983040, 0, 131079, 983040, 0, 196615, 983040, 0, 262151, 983040, 0, 131077, 65536, 983040, 327687, 65536, 0, 327688, 720896, 0, 262152, 589824, 0, 196616, 589824, 0, 131080, 589824, 0, 65544, 589824, 0, 8, 720896, 0, 7, 65536, 1048576, 589830, 524288, 0, 589831, 983040, 0, 589832, 589824, 0, 589833, 524288, 0, 655369, 65536, 1048576, 720905, 983040, 0, 589834, 983040, 0, 655370, 983040, 0, 720906, 983040, 0, 589835, 983040, 0, 655371, 65536, 0, 720907, 983040, 0, 589836, 983040, 0, 655372, 65536, 983040, 720908, 851968, 0, 589837, 983040, 0, 655373, 65536, 0, 720909, 983040, 0, 589838, 983040, 0, 655374, 983040, 0, 720910, 983040, 0, 589839, 589824, 0, 655375, 65536, 917504, 720911, 983040, 0, 655366, 524288, 0, 720902, 524288, 0, 786438, 655360, 0, 655367, 983040, 0, 720903, 983040, 0, 786439, 65536, 983040, 655368, 65536, 917504, 720904, 983040, 0, 786440, 65536, 983040, 786441, 327680, 0, 851977, 524288, 0, 917513, 655360, 0, 786442, 983040, 0, 851978, 983040, 0, 917514, 65536, 983040, 786443, 65536, 983040, 851979, 983040, 0, 917515, 65536, 983040, 786444, 65536, 1048576, 851980, 983040, 0, 917516, 65536, 983040, 786445, 65536, 983040, 851981, 983040, 0, 917517, 65536, 983040, 786446, 983040, 0, 851982, 983040, 0, 917518, 65536, 983040, 786447, 786432, 0, 851983, 589824, 0, 917519, 720896, 0, 655376, 65536, 983040, 720912, 983040, 0, 786448, 65536, 983040, 655377, 65536, 1048576, 720913, 65536, 0, 786449, 65536, 0, 524297, 655360, 0, 524298, 65536, 1048576, 524299, 65536, 983040, 524300, 65536, 983040, 524301, 65536, 983040, 524302, 65536, 983040, 524303, 720896, 0, 524294, 655360, 0, 524296, 720896, 0, 524295, 65536, 1048576, 655382, 65536, 1048576, 720918, 983040, 0, 786454, 65536, 983040, 655383, 65536, 1048576, 720919, 983040, 0, 786455, 65536, 983040, 524312, 655360, 0, 589848, 524288, 0, 655384, 65536, 1048576, 720920, 983040, 0, 786456, 65536, 983040, 851992, 524288, 0, 917528, 655360, 0, 524313, 65536, 983040, 589849, 983040, 0, 655385, 983040, 0, 720921, 983040, 0, 786457, 983040, 0, 851993, 983040, 0, 917529, 65536, 983040, 524314, 65536, 983040, 589850, 983040, 0, 655386, 65536, 983040, 720922, 983040, 0, 786458, 65536, 983040, 851994, 983040, 0, 917530, 65536, 983040, 524315, 65536, 983040, 589851, 983040, 0, 655387, 983040, 0, 786459, 983040, 0, 851995, 983040, 0, 917531, 65536, 983040, 524316, 65536, 983040, 589852, 983040, 0, 655388, 65536, 983040, 720924, 983040, 0, 786460, 65536, 983040, 851996, 983040, 0, 917532, 65536, 983040, 655389, 983040, 0, 720925, 983040, 0, 786461, 983040, 0, 655390, 65536, 983040, 720926, 983040, 0, 786462, 65536, 983040, 524317, 65536, 983040, 589853, 983040, 0, 851997, 983040, 0, 917533, 65536, 983040, 524318, 65536, 983040, 589854, 983040, 0, 851998, 983040, 0, 917534, 65536, 983040, 524319, 65536, 983040, 589855, 983040, 0, 655391, 983040, 0, 720927, 983040, 0, 786463, 983040, 0, 851999, 983040, 0, 917535, 65536, 983040, 524320, 720896, 0, 589856, 589824, 0, 655392, 65536, 917504, 720928, 983040, 0, 786464, 786432, 0, 852000, 589824, 0, 917536, 720896, 0, 655393, 65536, 983040, 720929, 983040, 0, 786465, 65536, 983040, 655394, 720896, 0, 720930, 589824, 0, 786466, 720896, 0, 655381, 655360, 0, 720917, 524288, 0, 786453, 655360, 0, 720935, 983040, 0, 720936, 983040, 0, 720937, 983040, 0, 655398, 655360, 0, 720934, 524288, 0, 786470, 655360, 0, 655399, 65536, 1048576, 655400, 65536, 851968, 655401, 983040, 0, 786471, 65536, 1048576, 786472, 65536, 1048576, 786473, 65536, 1048576, 589865, 983040, 0, 983090, 983040, 0, 983089, 983040, 0, 983088, 983040, 0, 983087, 983040, 0, 983086, 983040, 0, 983085, 983040, 0, 983084, 983040, 0, 983083, 983040, 0, 589866, 983040, 0, 589867, 983040, 0, 589868, 983040, 0, 589869, 983040, 0, 589870, 983040, 0, 589871, 983040, 0, 589872, 983040, 0, 589873, 983040, 0, 589874, 983040, 0, 917547, 983040, 0, 852011, 983040, 0, 786475, 983040, 0, 720939, 983040, 0, 720940, 983040, 0, 720941, 983040, 0, 720942, 983040, 0, 720943, 983040, 0, 720944, 983040, 0, 786480, 983040, 0, 852016, 983040, 0, 852015, 983040, 0, 852014, 983040, 0, 852013, 983040, 0, 655410, 983040, 0, 720946, 983040, 0, 786482, 983040, 0, 852018, 983040, 0, 917554, 983040, 0, 589864, 524288, 0, 524328, 655360, 0, 524329, 65536, 1048576, 524330, 65536, 1048576, 524331, 65536, 1048576, 524332, 65536, 1048576, 524333, 65536, 1048576, 524334, 65536, 1048576, 524335, 65536, 1048576, 524336, 65536, 1048576, 524337, 65536, 1048576, 524338, 65536, 1048576, 524339, 720896, 0, 589875, 589824, 0, 655411, 589824, 0, 720947, 589824, 0, 786483, 589824, 0, 852019, 589824, 0, 917555, 589824, 0, 983091, 589824, 0, 1048627, 720896, 0, 1048626, 65536, 983040, 1048625, 65536, 983040, 1048624, 65536, 983040, 1048623, 65536, 983040, 1048622, 65536, 983040, 1048621, 65536, 983040, 1048620, 65536, 983040, 1048619, 65536, 983040, 1048618, 655360, 0, 983082, 524288, 0, 917546, 524288, 0, 852010, 524288, 0, 786474, 327680, 0, 720938, 65536, 0, 655402, 65536, 1048576, 655403, 65536, 0, 655404, 65536, 0, 655405, 65536, 0, 655406, 65536, 0, 655407, 65536, 0, 655408, 65536, 0, 655409, 65536, 983040, 720945, 65536, 1048576, 786481, 65536, 0, 852017, 65536, 0, 917553, 65536, 983040, 917552, 65536, 983040, 917551, 65536, 983040, 917550, 65536, 983040, 917549, 65536, 983040, 917548, 65536, 983040, 852012, 65536, 0, 786476, 65536, 0, 786477, 65536, 0, 786478, 65536, 0, 786479, 65536, 983040, 720923, 983040, 0)
+layer_1/name = "Air objects"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 1
+layer_1/tile_data = PackedInt32Array(524338, 131072, 0, 655403, 131072, 0, 917548, 131072, 0, 917553, 131072, 0, 655409, 131072, 0, 786476, 131072, 0, 786479, 131072, 0, 720923, 4, 0, 720925, 4, 0)
+script = ExtResource("4_xrmx6")
+niveau_1 = NodePath("../Niveau1/spawner_niveau")
+player_1 = NodePath("../Personnage")
+engine = NodePath("..")
+
+[node name="Niveau1" type="Node" parent="."]
+
+[node name="spawner_niveau" parent="Niveau1" node_paths=PackedStringArray("niveau_suivant", "teleporteur", "camera") instance=ExtResource("7_5vfy6")]
+position = Vector2(97, 96)
+niveau_suivant = NodePath("../../Niveau2/spawner_niveau")
+teleporteur = NodePath("../Teleporteur")
+camera = NodePath("../Camera2D")
+player_direction_default = 1
+
+[node name="Teleporteur" parent="Niveau1" instance=ExtResource("8_bsiwe")]
+position = Vector2(478, 288)
+
+[node name="Camera2D" type="Camera2D" parent="Niveau1"]
+position = Vector2(323, 231)
+zoom = Vector2(2, 2)
+
+[node name="Niveau2" type="Node" parent="."]
+
+[node name="spawner_niveau" parent="Niveau2" node_paths=PackedStringArray("niveau_suivant", "teleporteur", "camera") instance=ExtResource("7_5vfy6")]
+position = Vector2(482, 607)
+niveau_suivant = NodePath("../../Niveau3/spawner_niveau")
+teleporteur = NodePath("../Teleporteur")
+camera = NodePath("../Camera2D")
+Carte_deplacement_default_verso = false
+player_direction_default = 2
+
+[node name="Teleporteur" parent="Niveau2" instance=ExtResource("8_bsiwe")]
+position = Vector2(1058, 738)
+
+[node name="Camera2D" type="Camera2D" parent="Niveau2"]
+position = Vector2(794, 768)
+zoom = Vector2(1.75, 1.75)
+
+[node name="Niveau3" type="Node" parent="."]
+
+[node name="spawner_niveau" parent="Niveau3" node_paths=PackedStringArray("niveau_suivant", "teleporteur", "camera") instance=ExtResource("7_5vfy6")]
+position = Vector2(1443, 741)
+niveau_suivant = NodePath("../../Niveau4/spawner_niveau")
+teleporteur = NodePath("../Teleporteur")
+camera = NodePath("../Camera2D")
+player_direction_default = 1
+
+[node name="Teleporteur" parent="Niveau3" instance=ExtResource("8_bsiwe")]
+position = Vector2(2146, 736)
+
+[node name="Camera2D" type="Camera2D" parent="Niveau3"]
+position = Vector2(1822, 772)
+zoom = Vector2(1.75, 1.75)
+
+[node name="Niveau4" type="Node" parent="."]
+
+[node name="spawner_niveau" parent="Niveau4" node_paths=PackedStringArray("niveau_suivant", "teleporteur", "camera") instance=ExtResource("7_5vfy6")]
+position = Vector2(2528, 738)
+niveau_suivant = NodePath("../../NiveauFinal/spawner_niveau")
+teleporteur = NodePath("../Teleporteur")
+camera = NodePath("../Camera2D")
+player_direction_default = 1
+
+[node name="Teleporteur" parent="Niveau4" instance=ExtResource("8_bsiwe")]
+position = Vector2(2914, 862)
+
+[node name="Camera2D" type="Camera2D" parent="Niveau4"]
+position = Vector2(2945, 852)
+zoom = Vector2(1.5, 1.5)
+
+[node name="NiveauFinal" type="Node" parent="."]
+
+[node name="spawner_niveau" parent="NiveauFinal" node_paths=PackedStringArray("Booster", "niveau_suivant", "teleporteur", "camera") instance=ExtResource("7_5vfy6")]
+position = Vector2(1408.09, 1856.19)
+script = ExtResource("11_ubmap")
+NomSceneNext = "res://scene/monde2LevelDesign.tscn"
+Booster = NodePath("../BoosterOpening")
+niveau_suivant = NodePath(".")
+teleporteur = NodePath("../Teleporteur")
+camera = NodePath("../Camera2D")
+player_direction_default = 1
+
+[node name="Teleporteur" parent="NiveauFinal" instance=ExtResource("8_bsiwe")]
+position = Vector2(-36.7354, 1761.58)
+
+[node name="Camera2D" type="Camera2D" parent="NiveauFinal"]
+position = Vector2(1446.2, 2229.25)
+
+[node name="BoosterOpening" parent="NiveauFinal" instance=ExtResource("12_n8rlu")]
+position = Vector2(488, 1684)
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_7wure")
+volume_db = 1.024
+autoplay = true
+
+[node name="RobotSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_p2mtw")
+volume_db = 8.197
+autoplay = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.517647)
+z_index = -1
+offset_left = -1083.0
+offset_top = -748.0
+offset_right = 5823.0
+offset_bottom = 3505.0
+texture = ExtResource("15_jo8fb")

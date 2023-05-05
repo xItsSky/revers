@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cckrkdco0a3i6"]
+
+[ext_resource type="Script" path="res://script/bouton_demarrer.gd" id="1_54ywu"]
+[ext_resource type="Script" path="res://script/bouton_exit.gd" id="2_wbr6f"]
+[ext_resource type="Texture2D" uid="uid://cub85ctp5nvbi" path="res://asset/UI/end_screen_background.png" id="3_d1c35"]
+[ext_resource type="AudioStream" uid="uid://ch4vmlbfoylis" path="res://music/VΛNTE - Oblivion _ ♫ Copyright Free Music.mp3" id="4_7ctjg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xrmr"]
+size = Vector2(702.028, 122.053)
+
+[node name="EcranAcceuil" type="Node2D"]
+position = Vector2(960, 540)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 162.133)
+script = ExtResource("1_54ywu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -7.34161)
+shape = SubResource("RectangleShape2D_6xrmr")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(0, 292.37)
+script = ExtResource("2_wbr6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_6xrmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_d1c35")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7ctjg")
+autoplay = true

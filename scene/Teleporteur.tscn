@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfldc0rd00mj3"]
+
+[ext_resource type="Script" path="res://script/teleporteur.gd" id="1_8qivi"]
+[ext_resource type="SpriteFrames" uid="uid://cu050lo6d6b8k" path="res://animation/Teleporteur.tres" id="2_q2oqu"]
+[ext_resource type="PackedScene" uid="uid://ruxponn8armq" path="res://scene/TeleporteurAnimation.tscn" id="3_6u74p"]
+[ext_resource type="AudioStream" uid="uid://bj5fv1rd1thag" path="res://music/teleport2.wav" id="4_v8606"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yc3ed"]
+size = Vector2(4, 4)
+
+[node name="Teleporteur" type="Node2D"]
+script = ExtResource("1_8qivi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_q2oqu")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+position = Vector2(0, 15)
+shape = SubResource("RectangleShape2D_yc3ed")
+
+[node name="TeleporteurAnimation" parent="." instance=ExtResource("3_6u74p")]
+position = Vector2(0, -7)
+
+[node name="SonTeleporteur" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_v8606")
